@@ -24,7 +24,7 @@ namespace Calculadora
 
                 Print(operation, n1, n2);
 
-                Console.WriteLine("Do you want to continue? 1 to yes ou 2 to no");
+                Console.WriteLine("Do you want to continue? 1 to yes or 2 to no");
                 x = (Convert.ToInt32(Console.ReadLine()));
 
             } while ( x == 1 );
