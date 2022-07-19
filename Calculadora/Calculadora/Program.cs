@@ -7,17 +7,17 @@ namespace Calculadora
         static void Main(string[] args)
         {
 
-            int a = 0;
-            int x = 0;
+            float a = 0;
+            float x = 0;
 
 
             do {
 
-                int n1, n2;
+                float n1, n2;
                 Console.WriteLine("Type first number: ");
-                n1 = (Convert.ToInt32(Console.ReadLine()));
+                n1 = (float) (Convert.ToDouble(Console.ReadLine()));
                 Console.WriteLine("Type second number: ");
-                n2 = (Convert.ToInt32(Console.ReadLine()));
+                n2 = (float) (Convert.ToDouble(Console.ReadLine()));
 
                 Console.WriteLine("Wich operation you want to do? 1-Sum, 2-Minus, 3-Multiply ou 4-Division");
                 int operation = Convert.ToInt32(Console.ReadLine());
@@ -31,31 +31,42 @@ namespace Calculadora
 
         }
 
-        static int Sum(int a, int b)
+        static float Sum(float a, float b)
         {
-            int result = a + b;
+            float result = a + b;
             return result;
         }
 
-        static int Minus(int a, int b)
+        static float Minus(float a, float b)
         {
-            int result = a - b;
+            float result = a - b;
             return result;
         }
 
-        static int Multiply(int a, int b)
+        static float Multiply(float a, float b)
         {
-            int result = a * b;
+            float result = a * b;
             return result;
         }
 
-        static int Division(int a, int b)
+        static float Division(float a, float b)
         {
-            int result = a / b;
+            if (difZero(b)){
+                throw new Exception("it's not possible divide by zero");
+            }
+            float result = a / b;
             return result;
+
+            bool difZero (float b){
+                if (b == 0){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
         }
 
-        static void Print(int operation, int n1, int n2)
+        static void Print(float operation, float n1, float n2)
         {
             switch (operation)
             {
